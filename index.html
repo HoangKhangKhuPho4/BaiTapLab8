@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Medic Care Bootstrap 5 CSS Template</title>
+        <title>Medic Care - Comprehensive COVID-19 Health Support</title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +51,6 @@
     justify-content: flex-end;
 }
 
-/* Đảm bảo rằng widget không làm vỡ layout của thanh điều hướng */
 .navbar-nav {
     align-items: center;
 }
@@ -91,7 +90,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-/* CSS cho hiệu ứng hover trên tất cả liên kết trong navbar, loại trừ Google Dịch */
 .navbar-nav li a:not(#google_translate_element a) {
     transition: color 0.3s, background-color 0.3s;
     color: #000; 
@@ -99,7 +97,6 @@
     padding: 10px 15px; 
 }
 
-/* CSS cho hiệu ứng hover, loại trừ Google Dịch */
 .navbar-nav li a:not(#google_translate_element a):hover {
     color: #fff; 
     background-color: #007bff; 
@@ -229,25 +226,18 @@
     background-color: #e9ecef; 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-
         </style>
-
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
-
-    
+ 
 </script>
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     </head>
-    
-
-  
-  
 
     <body id="top">
     
@@ -255,7 +245,7 @@
 
             <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
                 <div class="container">
-                    <a class="navbar-brand mx-auto d-lg-none" href="lab8.html">
+                    <a class="navbar-brand mx-auto d-lg-none" href="index.html">
                         Medic Care
                         <strong class="d-block">Health Specialist</strong>
                     </a>
@@ -750,7 +740,7 @@ function revealOnScroll() {
     for (var i = 0; i < elements.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = elements[i].getBoundingClientRect().top;
-        var elementVisible = 100; // khoảng cách từ đỉnh trang
+        var elementVisible = 100;
 
         if (elementTop < windowHeight - elementVisible) {
             elements[i].classList.add('active');
@@ -764,27 +754,20 @@ window.addEventListener('scroll', revealOnScroll);
 
 document.addEventListener('DOMContentLoaded', function () {
 
-// Event listener cho form ehrForm
-// Lấy các phần tử input
 const patientNameInput = document.getElementById('patientName');
 const patientAgeInput = document.getElementById('patientAge');
 const medicalHistoryInput = document.getElementById('medicalHistory');
 
-// Lấy nút Lưu Thay Đổi
 const submitBtn = document.querySelector('#ehrModal .btn-primary');
 
-// Thêm sự kiện click cho nút Lưu Thay Đổi
 submitBtn.addEventListener('click', () => {
 
-  // Lấy giá trị của các trường input
   const patientName = patientNameInput.value;
   const patientAge = patientAgeInput.value;
   const medicalHistory = medicalHistoryInput.value;
 
-  // Tạo đường dẫn mailto với nội dung đã được điền sẵn
   const mailtoLink = `mailto:22130116@st.hcmuaf.edu.vn?subject=Hồ Sơ Sức Khỏe&body=Tên Bệnh Nhân: ${patientName}%0ATuổi: ${patientAge}%0ATiền Sử Bệnh: ${medicalHistory}`;
 
-  // Chuyển hướng đến mailtoLink
   window.location.href = mailtoLink;
 
 });

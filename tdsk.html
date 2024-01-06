@@ -354,8 +354,6 @@
           caloriesInput.value = foodCalories[selectedFood] || 0;
         });
 
-      // Old code for foodTracker form
-
       document.getElementById("nutritionCalculator").onsubmit = function (e) {
         e.preventDefault();
 
@@ -421,13 +419,11 @@
         e.preventDefault();
         var food = document.getElementById("foodSelection").value;
         checkFoodSafety(food);
-        // Other handling if needed
       };
 
       function addWeightOptions() {
         var select = document.getElementById("weight");
         for (var i = 20; i <= 500; i += 5) {
-          // Increment by 5kg
           var option = document.createElement("option");
           option.value = i;
           option.text = i + " kg";
@@ -439,7 +435,6 @@
       function addHeightOptions() {
         var select = document.getElementById("height");
         for (var i = 50; i <= 300; i += 5) {
-          // Increment by 5cm
           var option = document.createElement("option");
           option.value = i;
           option.text = i + " cm";
@@ -468,10 +463,8 @@
         var bedtime = document.getElementById("bedtime").value;
         var waketime = document.getElementById("waketime").value;
 
-        // Calculate sleep duration
         var sleepDuration = calculateSleepDuration(bedtime, waketime);
 
-        // Check if sleep time is valid
         if (!isSleepTimeValid(bedtime, waketime)) {
           Swal.fire({
             title: "Invalid Sleep Time!",
@@ -488,8 +481,8 @@
       function isSleepTimeValid(bedtime, waketime) {
         var bedtimeMoment = moment(bedtime, "HH:mm");
         var waketimeMoment = moment(waketime, "HH:mm");
-        var latestBedtime = moment("23:00", "HH:mm"); // 11pm
-        var earliestWaketime = moment("07:00", "HH:mm"); // 7am
+        var latestBedtime = moment("23:00", "HH:mm");
+        var earliestWaketime = moment("07:00", "HH:mm");
 
         return (
           bedtimeMoment.isBefore(latestBedtime) &&
@@ -586,7 +579,7 @@
       document
         .getElementById("backToHomeBtn")
         .addEventListener("click", function () {
-          window.location.href = "lab8.html";
+          window.location.href = "index.html";
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
